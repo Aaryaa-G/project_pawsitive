@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'adoptions/css/form_page.css' %}" media="screen">
+
+</head>
+<body>
+    <h1> Donations Page</h1>
+    <p>Thank you for supporting our cause! You can donate by scanning the QR code below:</p>
+
+    
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <p class="message {{ message.tags }}">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+    <p>Please fill out the donation form and upload the payment screenshot:</p>
+
+    <!-- Donations Form -->
+    <form action="{% url 'donate_form' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="email_id">Email ID*</label><br>
+        <input type="email" id="email_id" name="email_id" required><br><br>
+        
+        <!-- Full Name Field -->
+        <label for="name">Full Name*</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <!-- Contact Number Field -->
+        <label for="contact">Contact No.*</label><br>
+        <input type="tel" id="contact" name="contact" required><br><br>      
+
+        <!-- Upload Payment Screenshot -->
+        <label for="payment_screenshot">Upload Payment Screenshot*</label><br>
+        <input type="file" id="payment_screenshot" name="payment_screenshot" accept="image/*" required><br><br>
+        <img src="{% static 'adoptions/images/form_page.png' %}" alt="Donation QR Code" width="200px" height="200px"><br><br>
+        
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

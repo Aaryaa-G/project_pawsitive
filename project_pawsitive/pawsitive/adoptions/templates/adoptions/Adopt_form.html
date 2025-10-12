@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Adoption Form</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'adoptions/css/PostAdopt_form.css' %}" media="screen">
+</head>
+<body>
+    <h1>Union For Animals (UFA) - Post Adoption Form</h1>
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <p class="message {{ message.tags }}">{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <p><i>Fields marked with * denote required fields.</i></p><br>
+
+    <form action="{% url 'adopt_form' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <!-- Full Name -->
+        <label for="name">Full Name*</label><br>
+        <input type="text" id="name" name="name" maxlength="100" required><br><br>
+
+        <!-- Contact Number -->
+        <label for="contact">Contact No.*</label><br>
+        <input type="tel" id="contact" name="contact" maxlength="15" required><br><br>
+
+        <!-- Email -->
+        <label for="email_id">Email ID*</label><br>
+        <input type="email" id="email_id" name="email_id" required><br><br>
+
+        <!-- Address -->
+        <label for="address">Address*</label><br>
+        <input  type="text" id="address" name="address" maxlength="100" required></input><br><br>
+
+        <!-- Occupation -->
+        <label for="occupation">Occupation*</label><br>
+        <input type="text" id="occupation" name="occupation" maxlength="100" required><br><br>
+
+        <!-- Number of Adults -->
+        <label for="adults">How many adults are there in your family? (above 21 age)*</label><br>
+        <input type="number" id="adults" name="adults" min="0" required><br><br>
+
+        <!-- Number of Children -->
+        <label for="children">How many children are there in your family?*</label><br>
+        <input type="number" id="children" name="children" min="0" required><br><br>
+
+        <!-- Allergy Question -->
+        <!-- Allergy Question -->
+<!-- Allergy Question -->
+<label>Does anyone in the family have a known allergy to dogs/cats?*</label>
+<div class="radio-group">
+    <div>
+        <input type="radio" id="allergy_yes" name="allergy" value="Yes" required>
+        <label for="allergy_yes">Yes</label>
+    </div>
+    <div>
+        <input type="radio" id="allergy_no" name="allergy" value="No">
+        <label for="allergy_no">No</label>
+    </div>
+    <div>
+        <input type="radio" id="allergy_maybe" name="allergy" value="Maybe">
+        <label for="allergy_maybe">Maybe</label>
+    </div>
+</div><br>
+
+<!-- Agreement Question -->
+<label>Is everyone in agreement with the decision to adopt a dog/cat?*</label>
+<div class="radio-group">
+    <div>
+        <input type="radio" id="agreement_yes" name="agreement" value="Yes" required>
+        <label for="agreement_yes">Yes</label>
+    </div>
+    <div>
+        <input type="radio" id="agreement_no" name="agreement" value="No">
+        <label for="agreement_no">No</label>
+    </div>
+</div><br>
+
+<!-- Love and Attention Question -->
+<label>Do you have time to provide adequate love and attention?*</label>
+<div class="radio-group">
+    <div>
+        <input type="radio" id="love_yes" name="time_for_pet" value="Yes" required>
+        <label for="love_yes">Yes</label>
+    </div>
+    <div>
+        <input type="radio" id="love_no" name="time_for_pet" value="No">
+        <label for="love_no">No</label>
+    </div>
+    <div>
+        <input type="radio" id="love_maybe" name="time_for_pet" value="Maybe">
+        <label for="love_maybe">Maybe</label>
+    </div>
+</div><br>
+
+
+        <!-- Past Experience -->
+        <label for="experience">Any past experience with pets?</label><br>
+        <input type="text" id="experience" name="experience" maxlength="10"><br><br>
+
+        <!-- Name of Pet -->
+        <label for="pet_name">Name of dog/cat you are adopting</label><br>
+        <input type="text" id="pet_name" name="pet_name" maxlength="100"><br><br>
+
+        <!-- Gender of Pet -->
+        <label for="pet_gender">Gender of dog/cat you are adopting</label><br>
+        <input type="text" id="pet_gender" name="pet_gender" maxlength="10"><br><br>
+
+        <!-- Aadhar Card -->
+        <label for="aadhar">Aadhar Card Number</label><br>
+        <input type="text" id="aadhar" name="aadhar_number" maxlength="12"><br><br>
+
+        <!-- Consent Form -->
+        <label for="consent_form">Consent Form*</label>
+        <input type="file" id="consent_form" name="consent_form" accept=".pdf,.doc,.docx" required><br><br>
+
+       
+<!-- Regular Updates Question -->
+<label>Do you agree to send photos of dogs/cats on a regular basis (Monthly)?*</label>
+<div class="radio-group">
+    <div>
+        <input type="radio" id="photos_yes" name="regular_updates" value="Yes" required>
+        <label for="photos_yes">Yes</label>
+    </div>
+    <div>
+        <input type="radio" id="photos_no" name="regular_updates" value="No">
+        <label for="photos_no">No</label>
+    </div>
+    <div>
+        <input type="radio" id="photos_maybe" name="regular_updates" value="Maybe">
+        <label for="photos_maybe">Maybe</label>
+    </div>
+</div><br>
+
+
+
+        <!-- Photo of Pet -->
+        <label for="pet_photo">Photo of Pet you are adopting</label>
+        <input type="file" id="pet_photo" name="pet_photo" accept="image/*"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

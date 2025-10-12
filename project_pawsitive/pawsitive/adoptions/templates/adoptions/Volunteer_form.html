@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteer Signup Form - Union for Animals</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'adoptions/css/Volunteer_form.css' %}" media="screen">
+    
+</head>
+<body>
+    <div class="form-container">
+        <h1>Volunteer Signup Form: Union for Animals</h1>
+        <h3>
+            We're excited to welcome you to our volunteer group dedicated to caring for the amazing animals on our campus!<br>
+            Thank you for your interest in making a difference in their lives.<br><br>
+            Our Instagram handles for you to check out what we do:<br>
+            1. UFA: <a href="https://www.instagram.com/unionfor_animalsmumbai/" target="_blank">Union for Animals Mumbai</a><br>
+            2. Project Pawsitive: <a href="https://www.instagram.com/project__pawsitive/" target="_blank">Project Pawsitive</a><br><br>
+            Please fill out this short form to tell us more about yourself and your volunteer interests.<br>
+        </h3>
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <p class="message {{ message.tags }}">{{ message }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <h5><i>Fields marked with * denote required fields.</i></h5>
+
+        <form action="{% url 'volunteer_form' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label for="name">Name*</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email*</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone number (WhatsApp)*</label><br>
+            <input type="tel" id="phone" name="phone" required><br><br>
+
+            <label>You are a member of SVU as*</label><br>
+            <select id="svu_member" name="member_type" required>
+                <option value="Student">Student</option>
+                <option value="Administrative Staff">Administrative Staff</option>
+                <option value="Faculty">Faculty</option>
+            </select><br><br>
+
+            <label>Institute Affiliation - Which college of SVU do you belong to?*</label><br>
+            <select id="institute" name="affiliation" required>
+                <option value="Somaiya School of Design">Somaiya School of Design</option>
+                <option value="K J Somaiya College of Education">K J Somaiya College of Education</option>
+                <option value="K J Somaiya College of Engineering">K J Somaiya College of Engineering</option>
+                <option value="S K Somaiya College">S K Somaiya College</option>
+                <option value="Department of Library and Information Science">Department of Library and Information Science</option>
+                <option value="K J Somaiya Institute of Management">K J Somaiya Institute of Management</option>
+                <option value="K J Somaiya Institute of Dharma Studies">K J Somaiya Institute of Dharma Studies</option>
+                <option value="Somaiya Sports Academy">Somaiya Sports Academy</option>
+                <option value="Maya Somaiya School of Music and Performing Arts">Maya Somaiya School of Music and Performing Arts</option>
+                <option value="Somaiya Institute for Research and Consultancy">Somaiya Institute for Research and Consultancy</option>
+                <option value="Faculty and Staff Development Centre">Faculty and Staff Development Centre</option>
+            </select><br><br>
+
+            <label>Do you reside on campus or outside campus?*</label><br>
+            <input type="radio" id="live_on_campus" name="residence" value="Live on campus" required>
+            <label for="live_on_campus">Live on campus</label><br>
+            <input type="radio" id="live_outside_campus" name="residence" value="Live outside campus">
+            <label for="live_outside_campus">Live outside campus</label><br><br>
+
+            <label>Do you have prior experience in volunteering with regard to community animals or stray animals?*</label><br>
+            <input type="radio" id="experience_yes" name="experience_with_animals" value="Yes" required>
+            <label for="experience_yes">Yes</label><br>
+            <input type="radio" id="experience_no" name="experience_with_animals" value="No">
+            <label for="experience_no">No</label><br><br>
+
+            <label>In which areas are you interested in volunteering? (Select all that apply)*</label><br>
+            <input type="checkbox" id="feeding" name="volunteer_areas" value="Animal Feeding & Watering">
+            <label for="feeding">Animal Feeding & Watering</label><br>
+            <input type="checkbox" id="fundraising" name="volunteer_areas" value="Fundraising & Donation Drives">
+            <label for="fundraising">Fundraising & Donation Drives</label><br>
+            <input type="checkbox" id="vaccination" name="volunteer_areas" value="Vaccination & Sterilisation Drives">
+            <label for="vaccination">Vaccination & Sterilisation Drives</label><br>
+            <input type="checkbox" id="adoption" name="volunteer_areas" value="Adoption Drives for new pups & kittens">
+            <label for="adoption">Adoption Drives</label><br>
+            <input type="checkbox" id="veterinary" name="volunteer_areas" value="Assisting with Veterinary Care">
+            <label for="veterinary">Assisting with Veterinary Care</label><br>
+            <input type="checkbox" id="cleaning" name="volunteer_areas" value="Cleaning and Maintaining Animal Areas">
+            <label for="cleaning">Cleaning and Maintaining Animal Areas</label><br>
+            <input type="checkbox" id="social_media" name="volunteer_areas" value="Social Media Management">
+            <label for="social_media">Social Media Management</label><br><br>
+
+            <label for="why_volunteer">Why do you want to volunteer with Union for Animals?</label><br>
+            <textarea id="why_volunteer" name="reason_for_volunteering" rows="4"></textarea><br><br>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

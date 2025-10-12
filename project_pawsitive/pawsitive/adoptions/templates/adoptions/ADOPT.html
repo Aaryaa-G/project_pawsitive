@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en"><head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Adopt and Save a Life">
+    <meta name="description" content="">
+    <title>ADOPT</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'adoptions/css/nicepage.css' %}" media="screen">
+<link rel="stylesheet" href="{% static 'adoptions/css/ADOPT.css' %}" media="screen">
+    <script class="u-script" type="text/javascript" src="{% static 'adoptions/js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'adoptions/js/nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 6.18.5, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i">
+    
+    
+    
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": "Site1"
+      }
+      </script>
+      
+      <!-- JavaScript for Dropdown Toggle -->
+      <script>
+      function toggleDropdown() {
+        const dropdown = document.getElementById("adoptionDropdown");
+        dropdown.style.display = dropdown.style.display === "none" ? "block" : "none";
+      }
+      </script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="ADOPT">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
+  <body data-path-to-root="../" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-clearfix u-header u-palette-2-light-3 u-header" id="sec-654a" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="u-clearfix u-sheet u-sheet-1">
+        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container"></div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">DONATIONS PAGE</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+        <nav class="u-menu u-menu-one-level u-offcanvas u-menu-2">
+          <div class="menu-collapse u-custom-font u-font-merriweather" style="font-size: 1.5rem; font-weight: 700;">
+            <a class="u-button-style u-custom-text-hover-color u-nav-link" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xlink:href="#svg-e6a9"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="svg-e6a9" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            <ul class="u-custom-font u-font-merriweather u-nav u-unstyled u-nav-2"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}" rel="nofollow">HOME</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}" rel="nofollow">ABOUT</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'donate' %}" rel="nofollow">DONATE</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'adopt' %}" rel="nofollow">ADOPT</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'volunteer' %}" rel="nofollow">VOLUNTEER</a>
+</li>
+<li class="u-nav-item u-nav-icon">
+  <a class="u-button-style u-nav-link" href="{% url 'admin:index' %}" title="Admin">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+    </svg>
+  </a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}" rel="nofollow">HOME</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}" rel="nofollow">ABOUT</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}" rel="nofollow">DONATE</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}" rel="nofollow">ADOPT</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}" rel="nofollow">VOLUNTEER</a>
+</li></ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div></header>
+    <section class="u-clearfix u-container-align-right u-palette-2-light-3 u-section-1" id="sec-4847">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="data-layout-selected u-clearfix u-expanded-width u-gutter-22 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-size-26-lg u-size-30-sm u-size-30-xl u-size-30-xs u-size-60-md">
+                <div class="u-layout-col">
+                  <div class="u-container-align-left u-container-style u-layout-cell u-right-cell u-size-60 u-layout-cell-1">
+                    <div class="u-container-layout u-valign-middle u-container-layout-1">
+                      <h2 class="u-align-left u-custom-font u-font-merriweather u-text u-text-1">Find Love</h2>
+                      <p class="u-align-left u-custom-font u-font-merriweather u-text u-text-2">
+                        Welcome to our animal adoption page! We're excited that you're considering giving a loving home to a furry friend. Please fill out the form below to start the adoption process.
+                      </p>
+                      <button class="u-align-left u-btn u-button-style u-custom-font u-font-merriweather u-palette-2-base u-btn-1" onclick="toggleDropdown()">Adoption Form</button>
+                    
+                      <!-- Dropdown menu -->
+                      <div id="adoptionDropdown" class="dropdown-menu" style="display: none;">
+                        <a href="{% url 'preadoption_form' %}" class="dropdown-item" target="_blank">Pre-Adopt Form</a><br>
+                        <a href="{% url 'adopt_form' %}" class="dropdown-item" target="_blank">Post-Adopt Form</a>
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="u-size-30-sm u-size-30-xl u-size-30-xs u-size-34-lg u-size-60-md">
+                <div class="u-layout-col">
+                  <div class="u-size-30">
+                    <div class="u-layout-row">
+                      <div class="u-align-left u-container-align-center u-container-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-2" src="">
+                        <div class="u-container-layout u-valign-middle u-container-layout-2" src="">
+                          <div class="custom-expanded u-image u-image-circle u-image-1" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" data-image-width="455" data-image-height="608"></div>
+                        </div>
+                      </div>
+                      <div class="u-container-style u-image u-layout-cell u-left-cell u-size-30 u-image-2" src="" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" data-image-width="651" data-image-height="755">
+                        <div class="u-container-layout u-container-layout-3" src=""></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="u-size-30">
+                    <div class="u-layout-row">
+                      <div class="u-container-style u-image u-layout-cell u-size-30 u-image-3" src="" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" data-image-width="1080" data-image-height="1350">
+                        <div class="u-container-layout u-container-layout-4" src=""></div>
+                      </div>
+                      <div class="u-align-left u-container-align-center u-container-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-5" src="">
+                        <div class="u-container-layout u-container-layout-5" src="">
+                          <div class="custom-expanded u-image u-image-circle u-image-4" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="" data-image-width="540" data-image-height="560"></div>
+                          <div class="u-shape u-shape-svg u-text-palette-2-base u-shape-1">
+                            <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 50" style=""><use xlink:href="#svg-6f73"></use></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xml:space="preserve" class="u-svg-content" viewBox="0 0 160 50" x="0px" y="0px" id="svg-6f73" style="enable-background:new 0 0 160 50;"><path d="M133,26.7c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,22
+	c11.2-7.8,20.6-8.1,32.2,0c11,7.6,19,8.5,31.3,0c11.6-8.1,22.4-7.7,33.5,0c11.4,8,20.3,8.3,32.2,0c11.6-8.1,19.2-8.1,30.8,0
+	l-3.8,4.7C146.9,20.2,142.3,20.2,133,26.7z M133,10.8c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0
+	c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,6.1c11.2-7.8,20.6-8.1,32.2,0c11,7.6,19,8.5,31.3,0C75.1-2,85.9-1.6,97,6.1
+	c11.4,8,20.3,8.3,32.2,0C140.8-2,148.4-2,160,6.1l-3.8,4.7C146.9,4.3,142.3,4.3,133,10.8z M32.2,38c11,7.6,19,8.5,31.3,0
+	c11.6-8.1,22.4-7.7,33.5,0c11.4,8,20.3,8.3,32.2,0c11.6-8.1,19.2-8.1,30.8,0l-3.8,4.7c-9.3-6.5-13.9-6.5-23.3,0
+	c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,38
+	C11.2,30.2,20.6,29.9,32.2,38z"></path></svg>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    
+    
+    
+  
+</body></html>

@@ -1,0 +1,102 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background-image: url("/static/adoptions/images/volunteer_background.PNG");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Georgia, serif;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 30px; 
+}
+
+select {
+    color: white; 
+    background-color: transparent; 
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    font-family: Georgia, serif;
+}
+
+select option {
+    color: black; 
+    background-color: white; 
+}
+
+
+.form-container {
+    width: 90%;
+    max-width: 650px; 
+    background-color: rgba(0, 0, 0, 0.85); 
+    padding: 30px; 
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); 
+}
+
+h1, h3, h5 {
+    text-align: center;
+    margin: 10px 0;
+    color: #f0f0f0;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1); 
+    color: #fff;
+}
+
+form label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #ddd;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #00a5a5; 
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+form button:hover {
+    background-color: #12b0d0; 
+}
+.messages {
+    color: #ffcc00;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message.success {
+    background-color: #28a745;
+    color: white;
+}
+
+.message.error {
+    background-color: #dc3545;
+    color: white;
+}

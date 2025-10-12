@@ -1,0 +1,136 @@
+/* Background image settings */
+html, body {
+    height: 100%;
+    margin: 0;
+    background-image: url("/static/adoptions/images/form_background1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Georgia, serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px; /* Ensure space between content and screen edges */
+}
+
+/* Form container */
+form {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Title styling */
+h1 {
+    color: white;
+    font-size: 2.4em;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Label styling */
+form label {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* Input field styling */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="number"],
+form input[type="file"],
+form input[type="radio"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+/* Radio button group */
+.radio-group {
+    display: flex;
+    flex-direction: column; /* Stack each radio option vertically */
+    gap: 8px;
+     
+}
+
+.radio-group div {
+    display: flex;
+    align-items: center; /* Align radio button and label horizontally */
+    gap: 4px;
+     /* Space between radio button and label */
+}
+
+.radio-group label {
+    font-weight: normal;
+    cursor: pointer;
+}
+
+
+
+/* Submit button styling */
+form button {
+    width: 100%;
+    padding: 15px;
+    background-color: #008080;
+    color: white;
+    font-size: 16px;
+    font-family: Georgia, serif;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #1282AE;
+}
+
+/* Message styling */
+.messages {
+    color: #ffcc00;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.message {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message.success {
+    background-color: #28a745;
+    color: white;
+}
+
+.message.error {
+    background-color: #dc3545;
+    color: white;
+}
